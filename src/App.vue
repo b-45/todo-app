@@ -1,20 +1,22 @@
 <template>
-
-  <div class="min-h-screen bg-grey-light p-8">
-    <Hello></Hello>
+  <div class="min-h-screen bg-white antialiased">
+    <Todo></Todo>
   </div>
 </template>
 
 <script>
-import Hello from "./components/Hello.vue";
+import Todo from "./components/Todo.vue";
 
 export default {
   name: "app",
   components: {
-    Hello
+    Todo
   }
 };
 </script>
 
 <style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
 </style>

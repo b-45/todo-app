@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Tailwind Vue</h1>
+    <h1>Todo App</h1>
   </div>
 </template>
  
