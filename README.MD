@@ -12,7 +12,7 @@ Vue Todo- app with Vuex for state management, Firebase for data storage and Tail
 ***
 * [x] setup firebase & load seed data
 * [x] configure firebase in vue project for persistence
-* [ ] setup font awesome for icons
+* [x] setup font awesome for icons
 * [ ] setup vuex store for state management
 * [ ] create presentation layer & implement logic 
   * [ ] app - main container
