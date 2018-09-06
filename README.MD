@@ -16,7 +16,7 @@ Vue Todo- app with Vuex for state management, Firebase for data storage and Tail
 * [x] setup vuex store for state management
 * [x] create presentation layer & implement logic 
   * [x] app - main container
-  * [ ] logo
+  * [x] logo
   * [ ] todo
   * [ ] searchBar
   * [ ] todolist
