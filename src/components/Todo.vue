@@ -4,20 +4,20 @@
     <Logo></Logo>
 
     <!--enter task input  -->
-    <SearchBar></SearchBar>
+    <InputBar></InputBar>
   </div>
 </template>
 
 <script>
   import Logo from '@/components/Logo.vue'
-  import SearchBar from '@/components/SearchBar.vue'
+  import InputBar from '@/components/InputBar.vue'
 
 
   export default {
     name: 'Todo',
     components: {
       Logo,
-      SearchBar
+      InputBar
     },
   }
 </script>
