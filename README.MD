@@ -20,8 +20,9 @@ Vue Todo- app with Vuex for state management, Firebase for data storage and Tail
   * [x] logo
   * [x] todo
   * [x] searchBar
-  * [ ] todolist
-  * [ ] todoListItem
+  * [x] todoList
+  * [x] todoItem
+    * [ ] create checkbox
   * [ ] checkAlltodos
   * [ ] itemsLeftTodo
   * [ ] filterTodos

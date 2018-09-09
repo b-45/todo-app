@@ -1,6 +1,8 @@
 <template>
   <li class="flex items-center justify-between mb-2 text-grey-dark">
     <div class="flex items-center">
+      <!-- checkbox to select todo -->
+      <input v-model="completed" type="checkbox"/>
       <!-- display todo -->
       <div class="font-semibold p-3 ml-2 border-1 border-solid border-black">
         {{ title }}
@@ -20,5 +22,5 @@
         'completed': this.todo.completed,
       }
     },
-  } 
+  }
 </script>
