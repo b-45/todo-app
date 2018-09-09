@@ -26,7 +26,12 @@ export const store = new Vuex.Store({
     },
     retrieveTodos(state, todos){
       state.todos = todos
-    }
+    },
+    
+    deleteTodo(state, id){
+      const index = state.todos.findIndex(item => item.id == id)
+      state.todos.splice(index, 1)
+    },
   },
   actions: {
     addTodo(context, todo){
@@ -63,6 +68,13 @@ export const store = new Vuex.Store({
           })
           context.commit('retrieveTodos', tempTodosSorted)
       })
+    },
+
+    deleteTodo(context, id){
+      db.collection('todos').doc(id).delete()
+        .then(() => {
+          context.commit('deleteTodo', id)
+        })
     },
   }  
 })
