@@ -10,7 +10,11 @@ export const store = new Vuex.Store({
     filter: 'all',
     todos: [],
   },
-  getters: {},
+  getters: {
+    todos(state){
+      return state.todos
+    },
+  },
   mutations: {
     addTodo(state, todo){
       state.todos.push({
@@ -20,6 +24,9 @@ export const store = new Vuex.Store({
         editing: false
       })
     },
+    retrieveTodos(state, todos){
+      state.todos = todos
+    }
   },
   actions: {
     addTodo(context, todo){
@@ -34,6 +41,27 @@ export const store = new Vuex.Store({
           title: todo.title,
           completed: false  
         })
+      })
+    },
+    retrieveTodos(context){
+      context.state.loading = true
+      db.collection('todos').get()
+        .then(querySnapshot => {
+          let tempTodos = []
+          querySnapshot.forEach(doc => {
+            const data = {
+              id: doc.id,
+              title: doc.data().title,
+              completed: doc.data().completed,
+              timestamp: doc.data().timestamp,
+            }
+            tempTodos.push(data)
+          })
+          context.state.loading = false
+          const tempTodosSorted = tempTodos.sort((a, b) => {
+            return a.timestamp.seconds - b.timestamp.seconds
+          })
+          context.commit('retrieveTodos', tempTodosSorted)
       })
     },
   }  

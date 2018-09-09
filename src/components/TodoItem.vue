@@ -1,0 +1,24 @@
+<template>
+  <li class="flex items-center justify-between mb-2 text-grey-dark">
+    <div class="flex items-center">
+      <!-- display todo -->
+      <div class="font-semibold p-3 ml-2 border-1 border-solid border-black">
+        {{ title }}
+      </div>
+    </div>
+  </li>
+</template>
+
+<script>
+  export default {
+    name: 'TodoItem',
+    props: ['todo'],
+    data() {
+      return {
+        'id': this.todo.id,
+        'title': this.todo.title,
+        'completed': this.todo.completed,
+      }
+    },
+  } 
+</script>
