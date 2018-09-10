@@ -14,6 +14,10 @@ export const store = new Vuex.Store({
     todos(state){
       return state.todos
     },
+
+    itemsLeft(state){
+      return state.todos.filter(todo => !todo.completed).length
+    },
   },
   mutations: {
     addTodo(state, todo){
@@ -99,6 +103,6 @@ export const store = new Vuex.Store({
           context.commit('updateTodo', todo)
         })
     },
-    
+
   }  
 })
