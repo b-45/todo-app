@@ -14,7 +14,7 @@
       <input v-else type="text" class="ml-4 p-3 w-full border-2 rounded border-grey-light outline-none" v-model="title" @blur="doneEdit"
         @keyup.enter="doneEdit" @keyup.esc="cancelEdit" v-focus />
     </div>
-    
+
     <!-- delete todo  -->
     <div @click="removeTodo(todo.id)">
       <font-awesome-icon icon="times-circle"/>
@@ -25,7 +25,7 @@
 <script>
   export default {
     name: 'TodoItem',
-    props: ['todo'],
+    props: ['todo', 'checkAll'],
     data() {
       return {
         'id': this.todo.id,
@@ -41,6 +41,12 @@
         inserted: function (el) {
           el.focus()
         }
+      }
+    },
+    
+    watch: {
+      checkAll() {
+        this.completed = this.checkAll ? true : this.todo.completed
       }
     },
   

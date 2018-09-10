@@ -25,7 +25,7 @@ Vue Todo- app with Vuex for state management, Firebase for data storage and Tail
     * [x] create a checkbox to toggle completed todo
     * [x] create delete icon & implement logic to deleteTodo
     * [x] implement editing todo inline - this features toggles between states `displayTodo` and a hidden div that `editTodo`. Double click on todoItem reveals this hidden div.
-  * [ ] checkAlltodos
+  * [x] checkAlltodos 
   * [x] itemsLeftTodo
   * [ ] filterTodos
   * [ ] clearCompletedTodos

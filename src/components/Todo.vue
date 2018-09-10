@@ -12,11 +12,12 @@
 
     <!--checkAllTodos & itemsLeftTodo -->
     <div class="flex items-center justify-between border-t pt-4 font-semibold text-grey-darker mb-4">
+      <!--check all todo button  -->
+      <CheckAllTodos :anyItemsLeft = "anyItemsLeft"></CheckAllTodos>
 
-    <!--items left  -->
-    <ItemsLeftTodo></ItemsLeftTodo>
-    
-  </div>
+      <!--items left  -->
+      <ItemsLeftTodo></ItemsLeftTodo>
+    </div>
 
   </div>
 </template>
@@ -25,7 +26,8 @@
   import Logo from '@/components/Logo.vue'
   import InputBar from '@/components/InputBar.vue'
   import TodoList from '@/components/TodoList.vue'
-  import ItemsLeftTodo from '@/components/ItemsLeftTodo.vue';
+  import CheckAllTodos from '@/components/CheckAllTodos.vue'
+  import ItemsLeftTodo from '@/components/ItemsLeftTodo.vue'
 
 
   export default {
@@ -34,6 +36,7 @@
       Logo,
       InputBar,
       TodoList,
+      CheckAllTodos,
       ItemsLeftTodo
     },
 

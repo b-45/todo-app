@@ -5,6 +5,7 @@
           :key="todo.id"
           :todo="todo" 
           :index="index"
+          :checkAll="!anyItemsLeft"
          >
         </TodoItem>
     </ul>
@@ -22,6 +23,9 @@ import TodoItem from '@/components/TodoItem.vue'
     computed: {
        todos(){        
         return this.$store.getters.todos
+      },
+        anyItemsLeft(){
+        return this.$store.getters.anyItemsLeft
       },
     }
   }

@@ -18,6 +18,9 @@ export const store = new Vuex.Store({
     itemsLeft(state){
       return state.todos.filter(todo => !todo.completed).length
     },
+    anyItemsLeft(state, getters){
+      return getters.itemsLeft != 0
+    },
   },
   mutations: {
     addTodo(state, todo){
@@ -46,6 +49,9 @@ export const store = new Vuex.Store({
           'completed': todo.completed,
           'editing': todo.editing,
         })
+    },
+    checkAll(state, checked) {
+      state.todos.forEach(todo => (todo.completed = checked))
     },
   },
   actions: {
@@ -103,6 +109,20 @@ export const store = new Vuex.Store({
           context.commit('updateTodo', todo)
         })
     },
+
+    checkAll(context, checked) {
+      db.collection('todos').get()
+        .then(querySnapshot => {
+          querySnapshot.forEach(doc =>{
+            doc.ref.update({
+              completed: checked
+            })
+            .then(() => {
+              context.commit('checkAll', checked)        
+            })
+          })
+        })
+    },  
 
   }  
 })
