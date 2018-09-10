@@ -1,10 +1,10 @@
 <template>
   <div class="max-w-md mx-auto p-6">
-    
+
     <!-- logo -->
     <Logo></Logo>
 
-    <!--enter task input  -->
+    <!--input todo -->
     <InputBar></InputBar>
    
     <!-- display list of todos  -->
