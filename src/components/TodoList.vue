@@ -1,7 +1,7 @@
 <template>
  <ul class="list-reset">
         <TodoItem 
-          v-for="(todo, index) in todos" 
+          v-for="(todo, index) in todosFiltered" 
           :key="todo.id"
           :todo="todo" 
           :index="index"
@@ -21,10 +21,10 @@ import TodoItem from '@/components/TodoItem.vue'
     },
      
     computed: {
-       todos(){        
-        return this.$store.getters.todos
+      todosFiltered(){        
+        return this.$store.getters.todosFiltered
       },
-        anyItemsLeft(){
+      anyItemsLeft(){
         return this.$store.getters.anyItemsLeft
       },
     }

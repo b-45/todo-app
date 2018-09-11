@@ -18,9 +18,22 @@ export const store = new Vuex.Store({
     itemsLeft(state){
       return state.todos.filter(todo => !todo.completed).length
     },
+    
     anyItemsLeft(state, getters){
       return getters.itemsLeft != 0
     },
+
+    todosFiltered(state){
+      if (state.filter == 'all') {
+        return state.todos  
+      } else if (state.filter == 'active') {
+        return state.todos.filter(todo => !todo.completed)
+      } else if (state.filter == 'completed') {
+        return state.todos.filter(todo => todo.completed)
+      }
+      return state.todos
+    },
+
   },
   mutations: {
     addTodo(state, todo){
@@ -52,6 +65,10 @@ export const store = new Vuex.Store({
     },
     checkAll(state, checked) {
       state.todos.forEach(todo => (todo.completed = checked))
+    },
+
+    updateFilter(state, filter){
+      state.filter = filter
     },
   },
   actions: {
@@ -123,6 +140,10 @@ export const store = new Vuex.Store({
           })
         })
     },  
+
+    updateFilter(context, filter){
+      context.commit('updateFilter', filter)  
+    },
 
   }  
 })

@@ -19,6 +19,12 @@
       <ItemsLeftTodo></ItemsLeftTodo>
     </div>
 
+     <div class="flex items-center justify-between border-t pt-4 text-grey-darkest">
+      <!-- filter todo buttons -->
+      <FilterTodos></FilterTodos>
+
+    </div>
+
   </div>
 </template>
 
@@ -28,6 +34,8 @@
   import TodoList from '@/components/TodoList.vue'
   import CheckAllTodos from '@/components/CheckAllTodos.vue'
   import ItemsLeftTodo from '@/components/ItemsLeftTodo.vue'
+  import FilterTodos from '@/components/FilterTodos.vue'
+
 
 
   export default {
@@ -37,7 +45,8 @@
       InputBar,
       TodoList,
       CheckAllTodos,
-      ItemsLeftTodo
+      ItemsLeftTodo,
+      FilterTodos
     },
 
     created() {
