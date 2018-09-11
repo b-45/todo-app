@@ -18,11 +18,12 @@
       <!--items left  -->
       <ItemsLeftTodo></ItemsLeftTodo>
     </div>
-
      <div class="flex items-center justify-between border-t pt-4 text-grey-darkest">
       <!-- filter todo buttons -->
       <FilterTodos></FilterTodos>
 
+      <!-- clear completed todos button -->
+      <ClearCompletedTodos></ClearCompletedTodos>
     </div>
 
   </div>
@@ -35,6 +36,7 @@
   import CheckAllTodos from '@/components/CheckAllTodos.vue'
   import ItemsLeftTodo from '@/components/ItemsLeftTodo.vue'
   import FilterTodos from '@/components/FilterTodos.vue'
+  import ClearCompletedTodos from '@/components/ClearCompletedTodos.vue'
 
 
 
@@ -46,7 +48,8 @@
       TodoList,
       CheckAllTodos,
       ItemsLeftTodo,
-      FilterTodos
+      FilterTodos,
+      ClearCompletedTodos
     },
 
     created() {

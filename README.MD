@@ -28,5 +28,5 @@ Vue Todo- app with Vuex for state management, Firebase for data storage and Tail
   * [x] checkAlltodos 
   * [x] itemsLeftTodo
   * [x] filterTodos
-  * [ ] clearCompletedTodos
+  * [x] clearCompletedTodos
 

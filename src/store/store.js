@@ -34,6 +34,10 @@ export const store = new Vuex.Store({
       return state.todos
     },
 
+    showClearCompletedButton(state){
+      return state.todos.filter(todo => todo.completed).length > 0
+    },
+
   },
   mutations: {
     addTodo(state, todo){
@@ -63,6 +67,7 @@ export const store = new Vuex.Store({
           'editing': todo.editing,
         })
     },
+
     checkAll(state, checked) {
       state.todos.forEach(todo => (todo.completed = checked))
     },
@@ -70,7 +75,12 @@ export const store = new Vuex.Store({
     updateFilter(state, filter){
       state.filter = filter
     },
+
+    clearCompleted(state){
+      state.todos = state.todos.filter(todo => !todo.completed)
+    },
   },
+
   actions: {
     addTodo(context, todo){
       db.collection('todos').add({
@@ -86,6 +96,7 @@ export const store = new Vuex.Store({
         })
       })
     },
+
     retrieveTodos(context){
       context.state.loading = true
       db.collection('todos').get()
@@ -145,5 +156,16 @@ export const store = new Vuex.Store({
       context.commit('updateFilter', filter)  
     },
 
+    clearCompleted(context){
+      db.collection('todos').where('completed', '==', true).get()
+        .then((querySnapshot) => {
+          querySnapshot.forEach(doc => {
+            doc.ref.delete()
+              .then(() => {
+                context.commit('clearCompleted')
+              })
+          })
+        })  
+     },
   }  
 })
