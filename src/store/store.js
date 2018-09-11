@@ -6,9 +6,9 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
   state: {
-    loading: true,
-    filter: 'all',
     todos: [],
+    filter: 'all',
+    loading: true,
   },
   getters: {
     todos(state){

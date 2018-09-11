@@ -10,6 +10,9 @@
     <!-- display list of todos  -->
     <TodoList></TodoList>
 
+     <!-- loading spinner -->
+    <div v-if="$store.state.loading" class="lds-hourglass"></div>
+
     <!--checkAllTodos & itemsLeftTodo -->
     <div class="flex items-center justify-between border-t pt-4 font-semibold text-grey-darker mb-4">
       <!--check all todo button  -->
