@@ -17,7 +17,7 @@
 
     <!-- delete todo  -->
     <div @click="removeTodo(todo.id)">
-      <font-awesome-icon icon="times-circle"/>
+      <font-awesome-icon icon="trash"/>
     </div>
   </li>
 </template>

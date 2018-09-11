@@ -30,4 +30,8 @@ Vue Todo- app with Vuex for state management, Firebase for data storage and Tail
   * [x] filterTodos
   * [x] clearCompletedTodos
   * [x] loading spinner
+  * [ ] replace todo icon
+  * [ ] deploy
+
+
 
